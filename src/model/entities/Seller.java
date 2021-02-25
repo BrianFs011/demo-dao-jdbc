@@ -6,7 +6,7 @@ import java.util.Date;
 public class Seller implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-	private Integer Id       ;
+	private Integer id       ;
 	private String name		 ;
 	private String email	 ;
 	private Date   birthDate ;
@@ -19,7 +19,7 @@ public class Seller implements Serializable{
 	}
 
 	public Seller(Integer id, String name, String email, Date birthDate, Double baseSalary, Department department) {
-		Id = id;
+		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.birthDate = birthDate;
@@ -28,11 +28,11 @@ public class Seller implements Serializable{
 	}
 
 	public int getId() {
-		return Id;
+		return id;
 	}
 
 	public void setId(int id) {
-		Id = id;
+		this.id = id;
 	}
 
 	public String getName() {
@@ -77,7 +77,7 @@ public class Seller implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Seller [Id=" + Id + ", name=" + name + ", email=" + email + ", birthDate=" + birthDate + ", baseSalary="
+		return "Seller [Id=" + id + ", name=" + name + ", email=" + email + ", birthDate=" + birthDate + ", baseSalary="
 				+ baseSalary + ", department=" + department + "]";
 	}
 
@@ -85,7 +85,7 @@ public class Seller implements Serializable{
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + Id;
+		result = prime * result + id;
 		return result;
 	}
 
@@ -98,7 +98,7 @@ public class Seller implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Seller other = (Seller) obj;
-		if (Id != other.Id)
+		if (id != other.id)
 			return false;
 		return true;
 	}
