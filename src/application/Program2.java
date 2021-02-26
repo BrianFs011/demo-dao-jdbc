@@ -15,7 +15,7 @@ public class Program2 {
 		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
 		
 		System.out.println("=== Test 1 Insart ===");
-		Department newDepartment = new Department(null, "Carro");
+		Department newDepartment = new Department(null, "GTA");
 		departmentDao.insert(newDepartment);
 		System.out.println("Insart Department: "+ newDepartment.getId());
 		
@@ -34,6 +34,9 @@ public class Program2 {
 		int id = sc.nextInt();
 		departmentDao.deleteById(id);
 		System.out.println("Deleted");
+		
+		System.out.println("\n=== Test 5 FindAll ===");
+		System.out.println(departmentDao.findAll());
 		
 		sc.close();
 	}
