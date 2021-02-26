@@ -15,11 +15,15 @@ public class Program2 {
 		departmentDao.insert(newDepartment);
 		System.out.println("Insart Department: "+ newDepartment.getId());
 		
-		System.out.println("=== Test 2 FindById ===");
+		System.out.println("\n=== Test 2 FindById ===");
 		Department department = departmentDao.findById(3);
 		System.out.println(department);
 
-		System.out.println("=== Test 3 Update ===");
+		System.out.println("\n=== Test 3 Update ===");
+		department = departmentDao.findById(2);
+		department.setName("avião");
+		departmentDao.upDate(department);
+		System.out.println("UpDate completed");
 		
 	}
 }
