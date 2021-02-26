@@ -10,9 +10,16 @@ public class Program2 {
 		
 		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
 		
-		System.out.println("===Test 1 Insart ===");
+		System.out.println("=== Test 1 Insart ===");
 		Department newDepartment = new Department(null, "Carro");
 		departmentDao.insert(newDepartment);
 		System.out.println("Insart Department: "+ newDepartment.getId());
+		
+		System.out.println("=== Test 2 FindById ===");
+		Department department = departmentDao.findById(3);
+		System.out.println(department);
+
+		System.out.println("=== Test 3 Update ===");
+		
 	}
 }

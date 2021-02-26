@@ -108,7 +108,7 @@ public class SellerDaoJDBC implements SellerDao{
 	}
 
 	@Override
-	public Seller findById(Integer Id) {
+	public Seller findById(Integer id) {
 		PreparedStatement st = null;
 		ResultSet         rs = null;
 		
@@ -118,7 +118,7 @@ public class SellerDaoJDBC implements SellerDao{
 					+ "ON seller.DepartmentId = department.Id "
 					+ "WHERE seller.Id = ?");
 		
-			st.setInt(1, Id);
+			st.setInt(1, id);
 			rs = st.executeQuery();
 			
 			if(rs.next()) {
