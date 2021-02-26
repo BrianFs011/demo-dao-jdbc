@@ -42,7 +42,9 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 					int id = rs.getInt(1);
 					obj.setId(id);
 				}
-				DB.closeResultSet(rs);
+				else {
+					throw new DbException("Unexpected error! No rows affected!");
+				}
 			}
 		} catch (SQLException e) {
 			throw new DbException(e.getMessage());
@@ -132,7 +134,7 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 		ResultSet         rs = null;
 		
 		try {
-			st = conn.prepareStatement("SELECT * from department");
+			st = conn.prepareStatement("SELECT * from department ORDER BY Name");
 			rs = st.executeQuery();
 			
 			List<Department> list = new ArrayList<>();
